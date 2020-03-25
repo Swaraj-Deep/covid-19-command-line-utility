@@ -1,0 +1,1 @@
+'Andhra Pradesh': 'Sri Venkateswara Institute of Medical Sciences, Tirupati', 'Rangaraya Medical College, Kakinada','Sidhartha Medical College, Vijaywada','Govt. Medical College, Ananthpur'
