@@ -69,7 +69,7 @@ def get_state_wise_data() -> "list":
             title.append(l_title_ind.get_text())
     state_list.append(title)
     state_data = []
-    for l_row in table.find_all('tr'):
+    for l_row in table.find_all('tr')[:-1]:
         temp = []
         l_row_data = l_row.find_all('td')
         for l_ind_data in l_row_data:
