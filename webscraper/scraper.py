@@ -116,11 +116,9 @@ if __name__ == '__main__':
             m_state_data_frame = m_state_wise_data[1][:-1]
             states = list(m_state_data_frame['Name of State / UT'])
             plot_data = {}
-            plot_data['Total Confirmed cases (Indian National)'] = list(
-                pd.to_numeric(m_state_data_frame['Total Confirmed cases (Indian National)'], downcast="float"))
-            plot_data['Total Confirmed cases (Foreign National)'] = list(
-                pd.to_numeric(m_state_data_frame['Total Confirmed cases ( Foreign National )'], downcast="float"))
-            plot_data['Cured / Discharged / Migrated'] = list(
+            plot_data['Total Confirmed cases *'] = list(
+                pd.to_numeric(m_state_data_frame['Total Confirmed cases *'], downcast="float"))
+            plot_data['Cured/Discharged/Migrated'] = list(
                 pd.to_numeric(m_state_data_frame['Cured/Discharged/Migrated'], downcast="float"))
             plot_data['Death'] = list(pd.to_numeric(
                 m_state_data_frame['Death'], downcast="float"))
@@ -129,8 +127,8 @@ if __name__ == '__main__':
                 ax = plot_data_frame.plot.bar(figsize=(20, 30), width=1)
                 plt.show()
             else:
-                new_title = ['Infected (Indian)',
-                             'Infected (Foreigners)', 'Cured', 'Deaths']
+                new_title = ['Total Confirmed cases *',
+                             'Cured', 'Deaths']
                 plot_data_frame.columns = new_title
                 print(plot_data_frame)
         if a == 5:
@@ -149,7 +147,8 @@ if __name__ == '__main__':
                     print(line)
                     flag = True
             if flag == False:
-                print("Sorry! We Cannot find any match with these keywords.\nTry again with other keyword")
+                print(
+                    "Sorry! We Cannot find any match with these keywords.\nTry again with other keyword")
             else:
                 print("Above is the list of possible matches")
     print("Thanks for using our service.\nPlease Stay at Home until situation gets under control.")
